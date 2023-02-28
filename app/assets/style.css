@@ -1,0 +1,621 @@
+@font-face{
+    font-family: Cinzel;
+    src: url(/app/assets/Fonts/Cinzel/static/Cinzel-Bold.ttf);
+}
+
+@font-face{
+    font-family: Allura;
+    src: url(/app/assets/Fonts/Allura/Allura-Regular.ttf);
+}
+
+@font-face{
+    font-family: Bebas;
+    src: url(/app/assets/Fonts/Bebas/BebasNeue-Regular.ttf);
+}
+
+@font-face{
+    font-family: MonotypeCorsiva;
+    src: url(/app/assets/Fonts/Monotype_Corsiva/Monotype_Corsiva.ttf);
+}
+
+html{
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+*,
+*:after,*:before{
+    box-sizing: inherit;
+}
+
+body{
+    margin: 0;
+    overflow: auto;
+    height: 100vh;
+}
+
+#root{
+    height: 100vh;
+}
+#frase>h1{
+    font-family: "Cinzel";
+    letter-spacing: 1px;
+    text-align: center;
+    font-size: xxx-large;
+}
+
+img{
+    max-width: 100%;
+    
+}
+
+
+#lgoidle{
+    width: 17%;
+}
+
+
+/*<-Css para la Frase Idle Inicio->*/
+#videofrasecontainer{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    overflow: visible;
+    height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+
+video{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 100%;
+    margin: 0;
+    line-height: 1;
+    border: none;
+    z-index: 1s;
+}
+
+#frasesidle{
+    z-index: 2;
+   
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#frase{
+    
+}
+
+@media (min-width: 768px){
+    #frasesidle{
+        height: 100%;
+    }
+
+    #videofrasecontainer{
+        height: 100vh;
+    }
+
+    
+    
+}
+
+@media (max-width: 1024px){
+    #frasesidle{
+        max-width: 1024px;
+    }
+}
+
+@media (min-width: 1845px){
+    video{
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+
+.videocontainer{
+    transition: opacity 1s;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    transition-property: opacity;
+    pointer-events: none;
+
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    overflow: hidden;
+    z-index: 0;
+    direction: ltr;
+}
+
+#cajaimagenes{
+    overflow: hidden;
+}
+
+#columnaidle{
+    padding: 10px;
+}
+
+#layout{
+    display: flex;
+    flex-direction: column;
+}
+
+#logo{
+    margin: 10px;
+    margin-bottom: 100px;
+
+}
+#logo,#frase{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+/*<-Css para la Frase Idle FInal->*/
+
+.controladorCajas{
+    /*Define el contenedor de grip*/
+    display: grid;
+    /*Espacio entre elementos*/
+    grid-gap: 35px;
+    /**/
+    grid-template-columns: calc(50% - 5px) calc(50% - 5px);
+
+    padding: 20px;
+}
+#BtnLineaBasica{
+    font-family: "Cinzel";
+    color: black;
+    font-size: 50px;
+}
+
+
+#BtnLineaPlatinum{
+    font-family: "Cinzel";
+    color: black;
+    font-size: 50px;
+}
+
+#BtnLineaMezcal{
+    font-family: "Cinzel";
+    color: black;
+    font-size: 50px;
+}
+
+#BtnLineaPremium{
+    font-family: "Cinzel";
+    color: black;
+    font-size: 50px;
+}
+
+.cajaGrid{
+    width: 300px;
+    height: 300px;
+    border: none ;
+    border-radius: 10px;
+    position: relative;
+    background: inherit;
+    
+}
+
+.cajaGrid>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    opacity: .6;
+}
+
+
+.cajaGrid>p{
+    position: absolute;
+    top:75px;
+    text-align: center;
+}
+#pantallaFamiliaBotellas{
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    height: 100vh;
+}
+
+
+
+
+/*<-Css para laPantalla familias->*/
+/*<-Css para la Primera Pantalla INICIO->*/
+
+#primeraPantalla{
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    height: 100vh;
+}
+
+
+
+.titulopantallas{
+   color: #BC8542;
+    margin: 20px;
+   letter-spacing: 1px;
+   overflow: hidden;
+    font-family: "Cinzel", Sans-serif;
+}
+
+#tituloinstrucciones{
+    
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+#logopsuperior{
+    
+}
+
+.psuperior{
+    width: 100%;
+    height: 25%;
+    background-color: black;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 80px 0px 80px 0px;
+}
+
+.pcentral{
+    height: 50%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    background-color: #ece5dc;
+    padding: 35px;
+    overflow: auto;
+
+}
+
+.pinferior{
+    height: 25%;
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    background-color: #ece5dc;
+
+}
+
+
+
+  #marco{
+    height: 100%;
+    width: 100%;
+  }
+
+  #botonsiguientepantalla{
+    display: block;
+    width: 150px;
+    height: 75px;
+    color: #BC8542;
+    font-family: "Cinzel";
+    letter-spacing: 1px;
+  }
+
+
+  #botonpantallaanterior{
+    display: block;
+    width: 150px;
+    height: 75px;
+    color: #BC8542;
+    font-family: "Cinzel";
+    letter-spacing: 1px;
+  }
+
+  #carouselExampleFade{
+    overflow: auto;
+  }
+
+  #continuarflujo{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+  }
+
+  .carousel{
+
+  }
+
+  .hidden{
+    opacity: 0;
+  }
+    
+  
+
+  .carousel-control-next,
+.carousel-control-prev /*, .carousel-indicators */ {
+    filter: invert(100%);
+}
+
+
+@keyframes fade {
+    0% { opacity: 0 }
+    20% { opacity: 1 } /* 20% of 5 seconds = 1 second */
+    80% { opacity: 1 }
+    100% { opacity: 1 }
+ }
+  
+ .fadeout{
+   opacity:0;
+   animation: fade ease-in-out 5s;
+   animation-fill-mode: forwards;
+ }
+ 
+
+ 
+ .box{
+    width: 100%;
+    justify-content: center;
+ }
+
+ .slider{
+    height: 100%;
+    width: 100%;
+    margin: 0px auto;
+    overflow: auto;
+ }
+ .slides{
+    height: 100%;
+    display: grid;
+    grid-template-columns: calc(25% - 10px) calc(25% - 10px) calc(25% - 10px) calc(25% - 10px);
+    grid-gap: 15px;
+    padding: 10px;
+    justify-content: center;
+    
+ }
+
+ .slides>li>img{
+  
+    width: 300px;
+    height: 300px;
+    background-color: black;
+    border: none ;
+    border-radius: 10px;
+    position: relative;
+    
+   
+ }
+
+ .slides>li>p{
+    position: relative;
+    font-family: "Cinzel";
+    height: 260px;
+    margin-top: 260px;
+    font-size: 30px;
+    display: none;
+ }
+
+
+ #textarea1{
+    font-size: 50px !important;
+    font-family: sans-serif;
+ }
+
+
+   
+/*<-Css para la Primera Pantalla->*/
+
+/*<-Css para la FORMULARIO INICIO->*/
+
+    .fas {
+    color: black;
+    }
+    .fa-envelope {
+    transform: rotate(-20deg);
+    }
+    .fa-at , .fa-mail-bulk{
+    transform: rotate(10deg);
+    }
+    input::placeholder {
+        color: #666;
+    }
+
+    .info{
+        display: flex;
+        flex-flow: column wrap;
+       
+    }
+
+    textarea{
+        width: 100%;
+    
+    }
+
+    @media (min-width: 568px) {
+   
+    .fa-envelope {
+    margin-top: 0;
+    margin-left: 20%;
+    }
+    .fa-at {
+    margin-top: -10%;
+    margin-left: 65%;
+    }
+    .fa-mail-bulk {
+    margin-top: 2%;
+    margin-left: 28%;
+    }
+    }
+
+    #AlingText>button:hover>i{
+        color: #FFF;  
+    }
+
+
+    #upperLowerCapital>button{
+        font-size:70%;
+    }
+
+
+    #Agregartextoextra>button{
+        font-size:70%;
+    }
+
+    
+/*<-Css para la FORMULARIO FINAL->*/
+
+
+#main-container-agradecimiento{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    background-color: black;
+}
+
+#main-container-agradecimiento>h1{
+    font-family: "Cinzel";
+    color: white;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 2cm;
+}
+
+
+#agradecer{
+    padding: 0px 30px 0px 30px;
+    
+}
+#espera{
+    padding: 0px 80px 0px 80px;
+    
+}
+
+
+.pcentral-agradecimiento{
+    height: 50%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    background-color: black;
+    padding: 35px;
+}
+
+
+.pinferior-agradecimiento{
+    height: 25%;
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    background-color: black;
+}
+
+
+/*<-Css para la FORMULARIO FINAL->*/
+
+/*<-Css para la ingreso de texto->*/
+#agregartexto{
+    width: 50%;
+    height: 100%;
+}
+
+#sidebar{
+width: 20%;
+height: 100%;
+}
+#sidebarcontent{
+    border-radius: 15px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+}
+
+#textpcentral{
+    justify-content: space-evenly;
+}
+
+#cajalistaTexto{
+    width:20% ;
+    height: 600px;
+    display: flex;
+    flex-flow: row wrap;
+  
+}
+
+.listaTexto{
+    background-color: #FFF;
+    width: 100%;
+    border-radius: 15px;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.listaTexto>h4{
+    font-family: "Cinzel";
+    letter-spacing: 1px;
+    text-align: center;
+    margin: 10px 0px 10px 0px;
+
+}
+
+
+#textarea1{
+    border-radius: 15px;
+    height: 100%;
+    resize:none;
+}
+
+
+
+
+
+#pcentralprevis{
+    justify-content: space-evenly;
+
+
+}
+/*<-Css para la ingreso de texto->*/
+
+
+#cajaMarcoPrincipal{
+flex-grow: 1;
+text-align: center;
+}
+
+#cajaMarco{
+margin: 0px auto;
+}
+
+#cajaColores{
+   
+}
+
+.cajaGrid2{
+    width: 100px;
+    height: 100px;
+    border: none ;
+    border-radius: 10px;
+}
+
+.controladorCajas2{
+    /*Define el contenedor de grip*/
+    display: grid;
+    /*Espacio entre elementos*/
+    grid-gap: 15px;
+    /**/
+    grid-template-columns: calc(33% - 5px) calc(33% - 5px) calc(33% - 5px);
+
+    padding: 10px;
+}

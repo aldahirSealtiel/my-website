@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="icon" href="/app/assets/icons8-cóctel-48.png">
+
+  <img id="img1" src="/app/assets/marcos/marco2.png">
+  <img id="img2" src="/app/assets/fondos/im1.png">
+  <canvas id="canvas" style="width: 400px;"></canvas>
+  
+  <script type="text/javascript">
+  var img1 = document.getElementById('img1');
+var img2 = document.getElementById('img2');
+var canvas = document.getElementById('canvas');
+var context = canvas.getContext('2d');
+img1.onload=function(){
+  canvas.width=this.naturalWidth;
+  canvas.height=this.naturalHeight;
+  context.globalAlpha = 1.0;
+  context.drawImage(img1, 0, 0, this.width,this.height);
+  
+}
+
+img2.onload=function(){
+  
+  context.globalAlpha = 0.4; //Remove if pngs have alpha
+  context.drawImage(img2, 300, 300,this.width*2,this.height*2);
+}
+
+canvas.style.backgroundColor="green";
+
+
+  </script>
+
+
+<script type="text/javascript" src="/jquery/jquery-3.6.3.min.js"></script>
+<script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />

@@ -1,0 +1,215 @@
+var mousePosition;
+var offset1 = [0,0];
+var offset2 = [0,0];
+var div;
+var isDown1 = false;
+var isDown2 = false;
+
+div = document.createElement("div");
+div.style.position = "absolute";
+div.style.left = "0px";
+div.style.top = "0px";
+div.style.width = "100px";
+div.style.height = "100px";
+div.style.background = "red";
+div.style.color = "blue";
+
+div2 = document.createElement("div");
+div2.style.position = "absolute";
+div2.style.left = "50px";
+div2.style.top = "50px";
+div2.style.width = "100px";
+div2.style.height = "100px";
+div2.style.background = "blue";
+div2.style.color = "blue";
+
+div0 = document.createElement("div");
+div.style.position = "relative";
+div0.style.width = "500px";
+div0.style.height = "500px";
+div0.style.border = "solid";
+
+
+
+document.body.appendChild(div0);
+div0.appendChild(div);
+div0.appendChild(div2);
+
+div.addEventListener('mousedown', function(e) {
+    isDown1 = true;
+    offset2 = [
+        div.offsetLeft - e.clientX,
+        div.offsetTop - e.clientY
+    ];
+}, true);
+
+div2.addEventListener('mousedown', function(e) {
+    isDown2 = true;
+    offset1 = [
+        div2.offsetLeft - e.clientX,
+        div2.offsetTop - e.clientY
+    ];
+}, true);
+
+document.addEventListener('mouseup', function() {
+    isDown1 = false;
+    isDown2 = false;
+}, true);
+
+document.addEventListener('mousemove', function(event) {
+    event.preventDefault();
+    if (isDown1) {
+        mousePosition = {
+    
+            x : event.clientX,
+            y : event.clientY
+    
+        };
+        if((mousePosition.x + offset1[0])<0){
+        	div.style.left = 0;
+        }else{
+        	if((mousePosition.x + offset1[0])>400){
+        		div.style.left = 400;
+        	}else{
+        		div.style.left = (mousePosition.x + offset1[0]) + 'px';
+        	}
+        }
+        if((mousePosition.y + offset1[1])<0){
+        		div.style.top  = 0 ;
+        }else{
+        	if((mousePosition.y + offset1[1])>400){
+        			div.style.top  = 400 ;
+        	}else{
+        			div.style.top  = (mousePosition.y + offset1[1]) + 'px';
+        	}
+        }
+        
+        
+        
+        
+    }
+     if (isDown2) {
+      mousePosition = {
+    
+            x : event.clientX,
+            y : event.clientY
+    
+        };
+     
+        if((mousePosition.x + offset2[0])<0){
+        	div2.style.left = 0;
+        }else{
+        	if((mousePosition.x + offset2[0])>400){
+        		div2.style.left = 400;
+        	}else{
+        		div2.style.left = (mousePosition.x + offset2[0]) + 'px';
+        	}
+        }
+        if((mousePosition.y + offset2[1])<0){
+        		div2.style.top  = 0 ;
+        }else{
+        	if((mousePosition.y + offset2[1])>400){
+        			div2.style.top  = 400 ;
+        	}else{
+        			div2.style.top  = (mousePosition.y + offset2[1]) + 'px';
+        	}
+        }
+     
+     }
+    
+    
+}, true);
+
+function a(){
+
+
+}
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Estacando eventos Touch</title>
+    <meta charset="utf-8" />
+    <script>
+       function inicia(){
+          var obj=document.getElementById("objArrastrable");
+          
+           var canvas = document.getElementById('objeto'); 
+           var ctx= canvas.getContext('2d'); 
+           var mousePosition;
+					 var offset = [0,0];
+					 var div;
+				 	 var isDown = false;
+
+           
+           document.addEventListener('touchend', function() {
+    isDown = false;
+}, true);
+
+obj.addEventListener('touchstart', function(e) {
+    isDown = true;
+    const touch = event.changedTouches[0];
+    offset = [
+        obj.offsetLeft - touch.clientX,
+        obj.offsetTop - touch.clientY
+    ];
+    console.log(touch.clientX);
+}, true);
+
+
+obj.addEventListener('touchmove', function(event){
+		event.preventDefault();
+    if (isDown) {
+        const touch = event.changedTouches[0];
+        obj.style.left = (touch.clientX + offset[0]) + 'px';
+        obj.style.top  = (touch.clientY + offset[1]) + 'px';
+    }
+//}
+    //if (event.targetTouches.length == 1) { 
+      // var touch = event.targetTouches[0]; 
+       // con esto solo se procesa UN evento touch
+       //obj.style.left = (touch.pageX + offset[0]) + 'px';
+       //obj.style.top = (touch.pageY  + offset[0])+ 'px';
+    //} 
+       }, false);        
+       
+   
+   }
+    </script>
+    
+    <style>
+       #objArrastrable{
+          border: #000 solid 2px;
+          position: absolute;
+          width:100px;
+          height: 100px;
+          top: 450px;
+          left: 100px;
+       }
+    </style>
+</head>
+    <body onLoad="inicia();">
+      <canvas width="450" height="350" style="border: #000 solid 3px; " id="objeto"></canvas>
+      <div id="objArrastrable">
+         Objeto arrastrable
+      </div>
+    </body>
+</html>
